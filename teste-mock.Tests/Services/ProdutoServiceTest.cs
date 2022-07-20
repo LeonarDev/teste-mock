@@ -1,4 +1,5 @@
 ﻿using Moq;
+using teste_mock.Models.Entities;
 using teste_mock.Repository.Interfaces;
 using teste_mock.Services;
 using teste_mock.Services.Interfaces;
@@ -26,6 +27,29 @@ namespace teste_mock.Tests.Services
             service.AddProduto(id, nome, marca);
 
             repository.Verify(a => a.AddProduto(id, nome, marca),  Times.Once);
+        }
+
+        [Fact(DisplayName = "AddProduto: 02 - Deve retornar o valor recebido de repository.AddProduto")]
+        public void AddProduto_02()
+        {
+            int id = 1;
+            string nome = "Produto 01";
+            string marca = "TDD";
+
+            Produto produtoEsperado = new Produto()
+            {
+                Id = id,
+                Nome = nome,
+                Marca = marca
+            };
+
+            repository
+                .Setup(a => a.AddProduto(id, nome, marca))
+                .Returns(produtoEsperado);
+
+            Produto produtoRetornado = service.AddProduto(id, nome, marca);
+
+            Assert.Same(produtoEsperado, produtoRetornado);
         }
     }
 }

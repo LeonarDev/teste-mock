@@ -7,4 +7,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\teste-mock.Models\teste-mock.Models.csproj" />
+    <ProjectReference Include="..\teste-mock.Repository\teste-mock.Repository.csproj" />
+  </ItemGroup>
+
 </Project>

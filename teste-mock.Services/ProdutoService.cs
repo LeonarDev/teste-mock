@@ -16,8 +16,7 @@ namespace teste_mock.Services
         }
         public Produto AddProduto(int id, string nome, string marca)
         {
-            _repository.AddProduto(id, nome, marca);
-            return null;
+            return _repository.AddProduto(id, nome, marca);
         }
     }
 }

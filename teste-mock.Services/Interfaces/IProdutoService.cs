@@ -4,6 +4,6 @@ namespace teste_mock.Services.Interfaces
 {
     public interface IProdutoService
     {
-        Produto addProduto(int id, string nome, string marca);
+        Produto AddProduto(int id, string nome, string marca);
     }
 }

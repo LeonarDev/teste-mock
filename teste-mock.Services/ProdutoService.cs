@@ -14,9 +14,10 @@ namespace teste_mock.Services
         {
             _repository = repository;
         }
-        public Produto addProduto(int id, string nome, string marca)
+        public Produto AddProduto(int id, string nome, string marca)
         {
-            throw new NotImplementedException();
+            _repository.AddProduto(id, nome, marca);
+            return null;
         }
     }
 }

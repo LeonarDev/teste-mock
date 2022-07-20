@@ -23,9 +23,9 @@ namespace teste_mock.Tests.Services
             string nome = "Produto 01";
             string marca = "TDD";
 
-            service.addProduto(id, nome, marca);
+            service.AddProduto(id, nome, marca);
 
-            repository.Verify(a => a.addProduto(id, nome, marca),  Times.Once);
+            repository.Verify(a => a.AddProduto(id, nome, marca),  Times.Once);
         }
     }
 }

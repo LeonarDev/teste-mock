@@ -4,6 +4,6 @@ namespace teste_mock.Repository.Interfaces
 {
     public interface IProdutoRepository
     {
-        Produto addProduto(int id, string nome, string marca);
+        Produto AddProduto(int id, string nome, string marca);
     }
 }
